@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+.planner-bg {
+  background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center center/cover;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+}
+
+.form-section, .task-section {
+  flex: 1;
+  padding: 40px;
+  background: rgba(0,0,0,0.6);
+  overflow-y: auto;
+}
+
+.form-section {
+  border-right: 2px solid rgba(255,255,255,0.3);
+}
+
+.form-section h1 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blue-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.blue-btn:hover {
+  background: #0b7dda;
+}
+
+.orange-btn {
+  background: #ff9800;
+  color: white;
+}
+
+.orange-btn:hover {
+  background: #e68900;
+}
+
+.task-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.task-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-section li {
+  background: rgba(255,255,255,0.3);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-section button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.task-section button.complete {
+  background: #28a745;
+  color: white;
+}
+
+.task-section button.delete {
+  background: #dc3545;
+  color: white;
+}
+.progress-container {
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4caf50;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-text {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #fff;
+}

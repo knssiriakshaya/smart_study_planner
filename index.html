@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="planner-bg">
+  <div class="main-container">
+    
+    <!-- Left side form -->
+    <div class="form-section">
+      <h1><i class="fa-solid fa-book-open-reader"></i> Smart Study Planner</h1>
+
+      <!-- Step 1: Study Level Selection -->
+      <div id="studyLevelSection">
+        <label><i class="fa-solid fa-graduation-cap"></i> Select your study level:</label>
+        <select id="studyLevel" class="input-field">
+          <option value="" disabled selected>-- Select Level --</option>
+          <option value="School Education">School Education</option>
+          <option value="Pre-University">Pre-University</option>
+          <option value="Undergraduate">Undergraduate (B.Tech, B.S., B.A., etc.)</option>
+          <option value="Postgraduate">Postgraduate (M.Tech, M.S., M.A., etc.)</option>
+          <option value="Doctoral (Ph.D.)">Doctoral (Ph.D.)</option>
+          <option value="other">Other</option>
+        </select>
+        
+        <div id="customLevelContainer" style="display: none;">
+          <label>Enter Custom Study Level:</label>
+          <input type="text" id="customStudyLevel" class="input-field" placeholder="Your custom study level">
+        </div>
+
+        <button class="btn blue-btn" onclick="confirmLevel()"><i class="fa-solid fa-check"></i> Confirm</button>
+      </div>
+
+      <!-- Step 2: Task Form (hidden initially) -->
+      <div id="taskFormSection">
+
+        <!-- New Stream Selection -->
+        <label><i class="fa-solid fa-diagram-project"></i> Select your stream:</label>
+        <select id="stream" class="input-field">
+          <option value="" disabled selected>Select stream</option>
+        </select>
+        <div id="customStreamContainer" style="display:none;">
+          <label>Enter Custom Stream:</label>
+          <input type="text" id="customStream" class="input-field" placeholder="Your custom stream">
+        </div>
+
+        <label><i class="fa-solid fa-book"></i> Which subject would you like to study?</label>
+        <select id="subject" class="input-field">
+          <option value="" disabled selected>Select subject</option>
+        </select>
+
+        <div id="customSubjectContainer" style="display: none;">
+          <label>Enter Custom Subject:</label>
+          <input type="text" id="customSubject" class="input-field" placeholder="Your custom subject">
+        </div>
+
+        <label><i class="fa-solid fa-list"></i> Which topics would you like to cover?</label>
+        <select id="topics" class="input-field">
+          <option value="" disabled selected>Select topic</option>
+        </select>
+
+        <div id="customTopicContainer" style="display: none;">
+          <label>Enter Custom Topic:</label>
+          <input type="text" id="customTopic" class="input-field" placeholder="Your custom topic">
+        </div>
+
+        <label><i class="fa-solid fa-calendar-days"></i> Deadline to finish:</label>
+        <input type="date" id="deadline" class="input-field">
+
+        <button class="btn blue-btn" onclick="addTask()"><i class="fa-solid fa-plus"></i> Add Task</button>
+      </div>
+
+      <!-- Change Level Button -->
+      <button id="changeLevelBtn" class="btn orange-btn" onclick="changeLevel()"><i class="fa-solid fa-rotate-left"></i> Change Study Level</button>
+    </div>
+
+    <!-- Right side task list -->
+    <div class="task-section">
+      <h2><i class="fa-solid fa-tasks"></i> Your Tasks</h2>
+      <div class="progress-container">
+  <label>Task Progress:</label>
+  <div class="progress-bar">
+    <div class="progress-fill" id="taskProgress"></div>
+  </div>
+  <div class="progress-text" id="progressText">0 / 0 tasks completed</div>
+</div>
+
+      <ul id="taskList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
